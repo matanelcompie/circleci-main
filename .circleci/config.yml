@@ -2,14 +2,16 @@
 version: 2.1
 jobs:
   deploy:
-    machine:
-      image: ubuntu-2004:202111-02
-    resource_class: medium
+    docker:
+      image: ubuntu:latest
     working_directory: ~/checkout
     environment:
       SSH_HOST: "<< pipeline.parameters.HOST >>"
       SSH_USER: "<< pipeline.parameters.USER >>"
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "a4:73:dd:6f:7f:b5:87:36:f3:d8:43:ac:df:d9:82:c9"
       - checkout
       - run:
           name: Edit ansible playbook
