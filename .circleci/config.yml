@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   deploy:
     docker:
-      image: cimg/base:2021.04
+      - image: ubuntu:latest
     working_directory: ~/checkout
     environment:
       SSH_HOST: "<< pipeline.parameters.HOST >>"
