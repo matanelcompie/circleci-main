@@ -1,5 +1,5 @@
 #!/bin/bash
-file="config.json"
+file="../config.json"
 sum_repos=$(jq '.values | length' $file)
 for i in $(seq 1 $sum_repos);
 do
