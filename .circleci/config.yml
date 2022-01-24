@@ -9,14 +9,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: check basic staff
-          command: |
-             pwd
-             ls
-      - run:
           name: Install ansible on puclic instance
           command: |
-             ssh $SSH_USER@$SSH_HOST "hostname; sudo apt-get update; sudo apt install ansible -y"
+             ssh $SSH_USER@$SSH_HOST "sudo apt-get update; sudo apt install ansible -y"
       - run:
           name: Edit ansible playbook
           command: |
