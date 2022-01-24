@@ -20,7 +20,8 @@ jobs:
       - run:
           name: Edit ansible playbook
           command: |
-             sudo apt-get install jq -y
+             sudo apt update
+             sudo apt install -y jq
              bash config_playbook.sh
       - run:
           name: Send ansible directory to public instance (from checkout)
