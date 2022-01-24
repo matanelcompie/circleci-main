@@ -15,7 +15,12 @@ This project run circleci every time we will push to this repository, and will c
         "repository": "git@github.com:matanelcompie/circleci-test.git",
         "branch": "b",
         "dst": "/home/ubuntu/repos/b"
-      }
+      },
+      {
+        "repository": "git@bitbucket.org:matanel-compie/ec2_nginx.git",
+        "branch": "master",
+        "dst": "/home/ubuntu/repos/bitbucket"
+      }      
     ]
 }
 ```
