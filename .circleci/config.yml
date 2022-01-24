@@ -22,7 +22,7 @@ jobs:
           command: |
              sudo apt update
              sudo apt install -y jq
-             bash ansible/config_playbook.sh
+             bash config_playbook.sh
       - run:
           name: Send ansible directory to public instance (from checkout)
           command: |
