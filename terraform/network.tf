@@ -54,11 +54,20 @@ resource "aws_nat_gateway" "nat_gw" {
   }
 }
 
-# Create EIP
+# Create EIP for nat
 resource "aws_eip" "nat" {
   vpc = true
   tags = {
     Name = "nat_eip",
+    Owner = "matanel"
+  }
+}
+
+# CCreate EIP for bastion EC2
+resource "aws_eip" "bastion_ec2" {
+  vpc = true
+  tags = {
+    Name = "bastion_eip",
     Owner = "matanel"
   }
 }

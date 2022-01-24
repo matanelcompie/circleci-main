@@ -7,6 +7,7 @@ resource "aws_instance" "bastion" {
   subnet_id = aws_subnet.public_sub.id                      
   vpc_security_group_ids = [aws_security_group.bastion_sg.id]    
   key_name = aws_key_pair.instance.key_name
+  allocation_id = aws_eip.bastion_eip.id
   depends_on = [
     aws_instance.private,
   ]
