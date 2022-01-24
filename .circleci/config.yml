@@ -27,7 +27,7 @@ jobs:
 # Here we set host & user details.
 parameters:
   HOST:
-    default: "18.159.37.56"
+    default: "3.65.112.253"
     type: string
   USER:
     default: ubuntu

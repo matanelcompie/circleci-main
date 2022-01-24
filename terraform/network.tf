@@ -63,7 +63,7 @@ resource "aws_eip" "nat" {
   }
 }
 
-# CCreate EIP for bastion EC2
+# Create EIP for bastion EC2
 resource "aws_eip" "bastion_ec2" {
   vpc = true
   tags = {
@@ -71,6 +71,13 @@ resource "aws_eip" "bastion_ec2" {
     Owner = "matanel"
   }
 }
+
+# associae eip with instance
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.bastion.id
+  allocation_id = aws_eip.bastion_ec2.id
+}
+
 
 # Create 2 Route Tables
 resource "aws_route_table" "route_public" {
