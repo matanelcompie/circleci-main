@@ -1,0 +1,14 @@
+{
+  "values": [
+    {
+        "repository": "git@github.com:matanelcompie/circleci-test.git",
+        "branch": "a",
+        "dst": "/home/ubuntu/repos/a"
+    },
+    {
+        "repository": "git@github.com:matanelcompie/circleci-test.git",
+        "branch": "b",
+        "dst": "/home/ubuntu/repos/b"
+      }
+    ]
+}
