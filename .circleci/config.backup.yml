@@ -1,0 +1,44 @@
+---
+version: 2.1
+jobs:
+  deploy:
+    machine:
+      image: ubuntu-2004:202111-02
+    resource_class: medium
+    working_directory: ~/checkout
+    environment:
+      SSH_HOST: "<< pipeline.parameters.HOST >>"
+      SSH_USER: "<< pipeline.parameters.USER >>"
+    steps:
+      - checkout
+      - run:
+          name: Edit ansible playbook
+          command: |
+             bash config_playbook.sh
+      - run:
+          name: Send ansible directory to public instance (from checkout)
+          command: |
+             scp -r ./ansible "$SSH_USER@$SSH_HOST:/home/$SSH_USER"                    
+      - run:
+          name: Run ansible playbook
+          command: |
+             ssh $SSH_USER@$SSH_HOST "cd ansible; ansible-playbook playbook.yaml"
+
+# Here we set host & user details.
+parameters:
+  HOST:
+    default: "3.65.112.253"
+    type: string
+  USER:
+    default: ubuntu
+    type: string
+
+# Here we ordering the jobs.
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: main
