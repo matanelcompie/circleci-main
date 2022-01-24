@@ -13,7 +13,7 @@
       {
         "repository": "git@bitbucket.org:matanel-compie/ec2_nginx.git",
         "branch": "master",
-        "dst": "/home/ubuntu/repos/master"
+        "dst": "/home/ubuntu/repos/bitbucket"
       }      
     ]
 }
