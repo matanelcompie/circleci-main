@@ -24,7 +24,7 @@ This project run circleci every time we will push to this repository, and will c
     ]
 }
 ```
- In this example we wanna checkout branches **a** and **b** from **circleci-test** repository and place them in **/home/ubuntu/repos/a** and **/home/ubuntu/repos/b** respectively.
+ In this example we wanna checkout branches **a** and **b** from **circleci-test** from github repository and also master branch from bitbucket repository, then place them in **/home/ubuntu/repos/a**, **/home/ubuntu/repos/b** and **/home/ubuntu/repos/bitbucket** respectively.
 
 ## prerequisites
 
