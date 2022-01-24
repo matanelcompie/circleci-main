@@ -12,14 +12,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install ansible on puclic instance
-          command: |
-             #ssh $SSH_USER@$SSH_HOST "sudo apt-get update; sudo apt install ansible -y"
-      - run:
           name: Edit ansible playbook
           command: |
-             #sudo apt update
-             #sudo apt install -y jq
              bash config_playbook.sh
       - run:
           name: Send ansible directory to public instance (from checkout)
@@ -29,6 +23,8 @@ jobs:
           name: Run ansible playbook
           command: |
              ssh $SSH_USER@$SSH_HOST "cd ansible; ansible-playbook playbook.yaml"
+
+# Here we set host & user details.
 parameters:
   HOST:
     default: "18.159.37.56"
@@ -36,6 +32,8 @@ parameters:
   USER:
     default: ubuntu
     type: string
+
+# Here we ordering the jobs.
 workflows:
   version: 2
   build-and-deploy:

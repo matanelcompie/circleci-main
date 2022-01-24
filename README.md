@@ -36,7 +36,7 @@ SSH_USER = "ubuntu"
 3. In Project Settings at SSH Keys tab, copy your EC2 public ssh private key and set instance public ip as hostname
 
 ### 3. On private instance
-1. Install git
+1. git & jq must be installed on private instance.
 2. Generate ssh key with ssh-keygen for access github/bitbucket repositories.
 3. Add public key to github.
 4. Add/Create to ~/.ssh/config your host and key respectively.
@@ -46,7 +46,8 @@ Host github.com
 ```
 
 ### 4. Ansible
-1. Set your instance private-ip in inventory file at ansible/inventory.
+1. Ansible must be installed on bastion instance.
+2. Set your instance private-ip in inventory file at ansible/inventory.
 ```
 [dev]
 10.10.1.178
