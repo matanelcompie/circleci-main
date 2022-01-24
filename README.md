@@ -35,10 +35,22 @@ SSH_USER = "ubuntu"
 2. In Project Settings at SSH Keys tab, copy your EC2 public ssh private key and set instance public ip as hostname
 
 ### 3. On private instance
-1. Generate ssh key with ssh-keygen for access github/bitbucket repositories.
-2. Add public key to github.
-3. Add/Create to ~/.ssh/config your host and key respectively.
+1. Install git
+2. Generate ssh key with ssh-keygen for access github/bitbucket repositories.
+3. Add public key to github.
+4. Add/Create to ~/.ssh/config your host and key respectively.
 ```bash
 Host github.com
     IdentityFile ~/.ssh/private_key
+```
+
+### 4. Ansible
+1. Set your instance private-ip in inventory file at ansible/inventory.
+```
+[dev]
+10.10.1.178
+```
+
+
+
 
