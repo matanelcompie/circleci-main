@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Send ansible directory to public instance (from checkout)
           command: |
-             scp -o IdentitiesOnly=yes -r ./ansible "$SSH_USER@$SSH_HOST:/home/$SSH_USER"                    
+             scp -o StrictHostKeyChecking=no -r ./ansible "$SSH_USER@$SSH_HOST:/home/$SSH_USER"                    
       - run:
           name: Run ansible playbook
           command: |
