@@ -1,7 +1,7 @@
 # circleci-main
 
 ## Introduction
-This project run circleci every time we will push to this repository, and will checkout git repositories & branches on private EC2 instance based on pushed config.json file
+This project run circleci every time we will push to this repository, and will checkout git repositories & branches on private EC2 instance based on pushed **config.json** file
 - Example
 ```json
 {
@@ -23,5 +23,10 @@ This project run circleci every time we will push to this repository, and will c
 
 ## prerequisites
 
+### 1. infrastructure
+
+### 2. circleci
+
+### 3. ansible
 
 
