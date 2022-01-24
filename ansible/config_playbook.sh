@@ -6,7 +6,7 @@ do
 repository=$(jq ".values[$i-1].repository"  $file);
 branch=$(jq ".values[$i-1].branch"  $file);
 dst=$(jq ".values[$i-1].dst"  $file);
-cat <<EOF >> ansible/playbook.yaml
+cat <<EOF >> playbook.yaml
   - name: Clone $i
     ansible.builtin.git:
       repo: $repository
