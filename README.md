@@ -28,13 +28,11 @@ This project run circleci every time we will push to this repository, and will c
 ### 2. circleci
 1. Go to circleci and set this repository as project.
 2. Go to Project Settings and set Environment Variables as follow:
-'''
+```
 SSH_HOST = "EC2_public_ip"
 SSH_USER = "ubuntu"
-'''
+```
 2. In Project Settings at SSH Keys tab, copy your EC2 public ssh private key and set instance public ip as hostname
-
-
 
 ### 3. ansible
 
